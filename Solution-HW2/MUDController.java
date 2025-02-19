@@ -54,14 +54,10 @@ public class MUDController {
 
 
     private void lookAround() {
-        System.out.println(player.getCurrentRoom().describe());
+        System.out.println(player.getCurrentRoom());
     }
 
     private void move(String direction) {
-        if (direction.isEmpty()) {
-            System.out.println("Move where?");
-            return;
-        }
         Room nextRoom = player.getCurrentRoom().getConnectedRoom(direction);
         if (nextRoom != null) {
             player.setCurrentRoom(nextRoom);

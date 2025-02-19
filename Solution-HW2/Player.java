@@ -10,6 +10,9 @@ public class Player implements IGameEntity{
     private List<Item> inventory = new ArrayList<>();
     private List<String> inventory_player;
 
+    private List<Item> items = new ArrayList<>();
+
+
 
     public Player(Room startingRoom) {
         this.currentRoom = startingRoom;
@@ -23,13 +26,6 @@ public class Player implements IGameEntity{
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 
     public int getHealth() {
         return health;
@@ -80,4 +76,7 @@ public class Player implements IGameEntity{
     }
 
 
+    public void addItem(Item item) {
+        items.add(item);
+    }
 }
